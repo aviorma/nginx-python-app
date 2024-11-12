@@ -9,12 +9,12 @@ app = Flask(__name__)
 # Initialize global counter
 counter = 0
 
-# MySQL configuration
+# MySQL configuration using environment variables
 db_config = {
-    'user': 'root',
-    'password': 'password',
-    'host': 'mysql',
-    'database': 'app_db'
+    'user': os.getenv('DB_USER', 'root'),  # Default to 'root' if DB_USER is not set
+    'password': os.getenv('DB_PASSWORD', 'root_password'),  # Default to 'root_password' if DB_PASSWORD is not set
+    'host': os.getenv('DB_HOST', 'mysql'),  # Default to 'mysql' if DB_HOST is not set
+    'database': os.getenv('DB_NAME', 'app_db')  # Default to 'app_db' if DB_NAME is not set
 }
 
 # Create a MySQL connection

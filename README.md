@@ -25,7 +25,17 @@ git clone https://github.com/your-username/nginx-python-app.git
 cd nginx-python-app
 ```
 
-### Step 2: Start the app
+### Step 2: Start the app and view the logs
 ```bash
-docker-compose up -d
+docker-compose up --build
+```
+### Step 2: Access the cluster
+```bash
+curl -l -vvv http://localhost
+curl -l -vvv http://localhost/showcount
+```
+
+### Step 3: Scale the app
+```bash
+bash -cx ./scale_apps.sh
 ```

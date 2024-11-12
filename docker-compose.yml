@@ -35,6 +35,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - db_logs:/var/log/mysql
+      - ./tables.sql:/docker-entrypoint-initdb.d/tables.sql
 
 networks:
   app_net:
