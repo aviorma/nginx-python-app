@@ -37,5 +37,5 @@ curl -l -vvv http://localhost/showcount
 
 ### Step 3: Scale the app
 ```bash
-bash -cx ./scale_apps.sh
+bash -cx ./scale_apps.sh NUM_OF_REPLICA
 ```
